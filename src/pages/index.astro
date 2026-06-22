@@ -1,8 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
 import '../styles/global.css';
-
-const allPosts = await getCollection('blog');
 const base = import.meta.env.BASE_URL;
 ---
 
@@ -10,20 +7,17 @@ const base = import.meta.env.BASE_URL;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Page</title>
+    <title>Selamat Datang!</title>
 </head>
 <body>
     <nav>
         <a href={base}>Home</a>
         <a href={`${base}posts`}>Posts</a>
     </nav>
-    <h1>Daftar Blog</h1>
-    <ul>
-      {allPosts.map((post) => (
-        <li>
-          <a href={`${base}${post.slug}`}>{post.data.title}</a> - {post.data.pubDate.toDateString()}
-        </li>
-      ))}
-    </ul>
+    <main>
+        <h1>Halo! Selamat Datang di Ruang Kreasi Saya.</h1>
+        <p>Senang sekali kamu mampir. Ini adalah tempat saya berbagi cerita, ide, dan pengalaman seru selama proses belajar dan membangun sesuatu.</p>
+        <p>Penasaran apa saja yang sudah saya tulis? Yuk, intip koleksi tulisan saya di halaman <a href={`${base}posts`}>Blog</a>.</p>
+    </main>
 </body>
 </html>
