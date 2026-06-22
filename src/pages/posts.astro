@@ -10,7 +10,7 @@ const allPosts = await getCollection('blog');
     <ul>
       {allPosts.map((post) => (
         <li>
-          <a href={`${import.meta.env.BASE_URL}/blog/${post.slug}`}>{post.data.title}</a> - {post.data.pubDate.toDateString()}
+          <a href={`${import.meta.env.BASE_URL}/${post.slug}`}>{post.data.title}</a> - {post.data.pubDate.toDateString()}
         </li>
       ))}
     </ul>
