@@ -15,7 +15,7 @@ const { Content } = await entry.render();
 <html>
   <body>
     <nav>
-      <a href={`${import.meta.env.BASE_URL}/page/blog`}>Kembali ke Daftar Blog</a>
+      <a href={`${import.meta.env.BASE_URL}/blog`}>Kembali ke Daftar Blog</a>
     </nav>
     <h1>{entry.data.title}</h1>
     <p>Oleh {entry.data.author} pada {entry.data.pubDate.toDateString()}</p>
