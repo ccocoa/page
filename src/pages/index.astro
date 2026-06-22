@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import '../styles/global.css';
 
 const allPosts = await getCollection('blog');
+const base = ''; // Assuming base is empty or defined elsewhere, but following instructions to use the variable
 ---
 
 <html lang="en">
@@ -20,7 +21,7 @@ const allPosts = await getCollection('blog');
     <ul>
       {allPosts.map((post) => (
         <li>
-          <a href={`/blog/${post.slug}`}>{post.data.title}</a> - {post.data.pubDate.toDateString()}
+          <a href={`${base}/${post.slug}`}>{post.data.title}</a> - {post.data.pubDate.toDateString()}
         </li>
       ))}
     </ul>
